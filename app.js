@@ -15,18 +15,22 @@ $( document ).ready(function() {
 
 
 
-    console.log( "ready!" );
-
-    var images = ['https://unsplash.com/collections/325867/minimalism?photo=JdUzpKdBsbI','https://unsplash.com/collections/325867/minimalism?photo=Bfrk9RCOhRE','https://unsplash.com/collections/325867/minimalism?photo=-S6R604fv_c','https://unsplash.com/collections/325867/minimalism?photo=HeFNnUaDiWc','https://unsplash.com/collections/325867/minimalism?photo=1fyccRaS_u4'];
+    console.log( "ready! wireframe is @ https://wireframe.cc/9HBged" );
 
 
+var counter = 1;
+$('#imageBannerDiv').css('background-image', 'url("img/photo-' +counter +'.jpeg")');
 
 
-    $('#imageBannerDiv')
+
 
     function changeImage() {
-      console.log("iwasclicked");
-
+      console.log("iwasclicked " + counter);
+      counter++;
+      if (counter > 8) {
+        counter = 1;
+      }
+      $('#imageBannerDiv').css('background-image', 'url("img/photo-' +counter +'.jpeg")');
     }
     $("#image_button").on("click", changeImage);
 
