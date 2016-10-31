@@ -36,7 +36,7 @@ $(document).ready(function() {
 });
 
 
-var game = new Phaser.Game(800, 480, Phaser.AUTO, 'source_text', { preload: preload, create: create });
+var game = new Phaser.Game('100', '100', Phaser.AUTO, 'canvasDiv', { preload: preload, create: create });
 
 var content = [
     "_",
@@ -61,14 +61,14 @@ var index = 0;
 var line = '';
 
 function preload() {
-    game.load.image('backgnd', 'img/backgnd.jpg');
+    game.load.image('backgnd', 'img/photo-9.jpg');
 }
 
 function create() {
     game.stage.backgroundColor = 'rgba(135,155,135,0.5)';
     game.add.image(0, 0, 'backgnd');
 
-    text = game.add.text(10, 220, '', { font: "30pt Expletus Sans", fill: "#0f0f0f", stroke: "#119f4e", strokeThickness: 2 });
+    text = game.add.text(60, 185, '', { font: "45pt Expletus Sans", fill: "#0f0f0f", stroke: "#119f4e", strokeThickness: 2 });
 
     nextLine();
 
@@ -85,19 +85,16 @@ function updateLine() {
     else
     {
         //  Wait 2 seconds then start a new line
-        game.time.events.add(Phaser.Timer.SECOND * 2, nextLine, this);
+        game.time.events.add(Phaser.Timer.SECOND * 1, nextLine, this);
     }
 
 }
 
 function nextLine() {
-
     index++;
-
     if (index < content.length)
     {
         line = '';
         game.time.events.repeat(80, content[index].length + 1, updateLine, this);
     }
-
 }

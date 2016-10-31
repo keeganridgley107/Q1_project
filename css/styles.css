@@ -9,9 +9,19 @@ body{
 
 #imageBannerDiv {
    height: 400px;
-
    background-size: cover;
 }
+#landingImageSpan{
+  display: inline;
+   color: white;
+   letter-spacing: 1px;
+   background: rgba(0, 0, 0, 0.8);
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-left: 20px;
+}
+
 
 h1 span {
   display: inline;
