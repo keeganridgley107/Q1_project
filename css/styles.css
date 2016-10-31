@@ -3,10 +3,13 @@ body{
   min-width: 100%;
   min-height: 100%;
 }
+#titleSpan{
+  font-family: 'Unica One', cursive;
+}
 
 #imageBannerDiv {
    height: 400px;
-   
+
    background-size: cover;
 }
 
@@ -22,7 +25,9 @@ h1 span {
 
 
 }
-
+button{
+  font-family: 'Expletus Sans', cursive;
+}
 
 .fade-in {
     animation: fade-in 2s ease;
