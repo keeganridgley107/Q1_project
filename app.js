@@ -36,18 +36,24 @@ $(document).ready(function() {
 });
 
 
-var game = new Phaser.Game(800, 480, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
+var game = new Phaser.Game(800, 480, Phaser.AUTO, 'source_text', { preload: preload, create: create });
 
 var content = [
     "_",
-    " ",
+    "Searching for source documents?_",
     "_",
     " ",
     "_",
+    "You need SourceSearch_",
+    "_",
     " ",
-    "SourceSearch",
-
-
+    "_",
+    "SourceSearch_",
+    "Quickly search by filetype,_",
+    "Subject matter,_",
+    "or location._",
+    " ",
+    "  S O U R C E S E A R C H"
   ];
 
 var text;
@@ -55,14 +61,14 @@ var index = 0;
 var line = '';
 
 function preload() {
-    game.load.image('cod', 'assets/pics/cod.jpg');
+    game.load.image('backgnd', 'img/backgnd.jpg');
 }
 
 function create() {
+    game.stage.backgroundColor = 'rgba(135,155,135,0.5)';
+    game.add.image(0, 0, 'backgnd');
 
-    game.add.sprite(0, 0, 'cod');
-
-    text = game.add.text(32, 380, '', { font: "30pt Courier", fill: "#19cb65", stroke: "#119f4e", strokeThickness: 2 });
+    text = game.add.text(10, 220, '', { font: "30pt Expletus Sans", fill: "#0f0f0f", stroke: "#119f4e", strokeThickness: 2 });
 
     nextLine();
 
