@@ -1,7 +1,8 @@
 "use strict";
 $(document).ready(function() {
     //function for google custom search is from google api docs
-    //jquery is having trouble loading??
+    //jquery / api is having trouble loading??
+    //UPDATE: fixed conflict
 
     (function() {
         var cx = '010106870863249008865:hfaciltwsa8';
@@ -18,7 +19,8 @@ $(document).ready(function() {
     console.log("ready! wireframe is @ https://wireframe.cc/9HBged");
 
 
-    var counter = 1;
+    var counter = Math.floor((Math.random()*15)+1);
+    console.log(counter);
     $('#imageBannerDiv').css('background-image', 'url("img/photo-' + counter + '.jpeg")');
 
 
@@ -50,7 +52,7 @@ var content = [
     "_",
     "SourceSearch_",
     "Quickly search by filetype,_",
-    "Subject matter,_",
+    "Subject,_",
     "or location._",
     " ",
     "  S O U R C E S E A R C H"
@@ -61,7 +63,7 @@ var index = 0;
 var line = '';
 
 function preload() {
-    game.load.image('backgnd', 'img/photo-9.jpg');
+    game.load.image('backgnd', 'img/photo-9.jpeg');
 }
 
 function create() {
