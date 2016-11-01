@@ -5,20 +5,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
   <script src="app.js" charset="utf-8"></script>
   <script src="js/materialize.min.js" charset="utf-8" defer></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+
   <link rel="stylesheet" href="css/materialize.min.css" media="screen">
   <link rel="stylesheet" href="css/styles.css" media="screen">
   <link href="https://fonts.googleapis.com/css?family=Unica+One|Expletus+Sans" rel="stylesheet">
     <title>Sources Page</title>
 
 </head>
-
 <body>
-  
-<!--table will go here with cards generated for each search source-->
+
+
+
+  <div id="container" style="width:100%; height:400px;"></div>
+<script type="text/javascript">
+var chart1; // globally available
+
+
+
+
+
+  $(function () {
+
+    Highcharts.chart('container', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Search Analysis'
+        },
+        subtitle: {
+            text: 'by social media shares'
+        },
+        xAxis: {
+            categories: ['Today', 'Yesterday', '2 days ago', '3 days ago', '4 days ago', '5 days ago', '6 days ago', '7 days ago', '8 days ago', '9 days ago', '10 days ago', '11 days ago']
+        },
+        yAxis: {
+            title: {
+                text: 'Social Media Shares'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'Search Query',
+            data: 'dataARR'
+        }]
+    });
+});
+
+</script>
+
+
+<!-- search / source analysis code goes here-->
 
 
   <nav class="row center grey darken-2">

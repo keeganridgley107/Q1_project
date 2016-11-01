@@ -17,10 +17,25 @@ $(document).ready(function() {
 
 
 
+
+var dataARR = [];
+    var url = "https://g-aylien.herokuapp.com/api/v1/histograms?field=social_shares_count&interval.width=100&interval.start=1&interval.end=3000&text=security&published_at.start=NOW-30DAYS&published_at.end=NOW&language=en&sort_by=social_shares_count";
+
+    $.getJSON(url, function(response) {
+      for (var keys in response.intervals) {
+        dataARR.push( response.intervals[keys].count)
+}
+        console.log(dataARR);
+    });
+
+
+
+
+
     console.log("ready! wireframe is @ https://wireframe.cc/9HBged");
 
 
-    var counter = Math.floor((Math.random()*15)+1);
+    var counter = Math.floor((Math.random() * 15) + 1);
     console.log(counter);
     $('#imageBannerDiv').css('background-image', 'url("img/photo-' + counter + '.jpeg")');
 
@@ -30,7 +45,7 @@ $(document).ready(function() {
     function changeImage() {
         console.log("iwasclicked " + counter);
         counter++;
-        if (counter > 8) {
+        if (counter > 16) {
             counter = 1;
         }
         $('#imageBannerDiv').css('background-image', 'url("img/photo-' + counter + '.jpeg")');
@@ -39,7 +54,10 @@ $(document).ready(function() {
 });
 
 
-var game = new Phaser.Game('100', '100', Phaser.AUTO, 'canvasDiv', { preload: preload, create: create });
+var game = new Phaser.Game('100', '100', Phaser.AUTO, 'canvasDiv', {
+    preload: preload,
+    create: create
+});
 
 var content = [
     "_",
@@ -57,7 +75,7 @@ var content = [
     "or location._",
     " ",
     "  S O U R C E S E A R C H"
-  ];
+];
 
 var text;
 var index = 0;
@@ -71,7 +89,12 @@ function create() {
     game.stage.backgroundColor = 'rgba(135,155,135,0.5)';
     game.add.image(0, 0, 'backgnd');
 
-    text = game.add.text(60, 185, '', { font: "45pt Expletus Sans", fill: "#0f0f0f", stroke: "#119f4e", strokeThickness: 2 });
+    text = game.add.text(60, 185, '', {
+        font: "45pt Expletus Sans",
+        fill: "#0f0f0f",
+        stroke: "#119f4e",
+        strokeThickness: 2
+    });
 
     nextLine();
 
@@ -79,14 +102,11 @@ function create() {
 
 function updateLine() {
 
-    if (line.length < content[index].length)
-    {
+    if (line.length < content[index].length) {
         line = content[index].substr(0, line.length + 1);
         // text.text = line;
         text.setText(line);
-    }
-    else
-    {
+    } else {
         //  Wait 2 seconds then start a new line
         game.time.events.add(Phaser.Timer.SECOND * 1, nextLine, this);
     }
@@ -95,8 +115,7 @@ function updateLine() {
 
 function nextLine() {
     index++;
-    if (index < content.length)
-    {
+    if (index < content.length) {
         line = '';
         game.time.events.repeat(80, content[index].length + 1, updateLine, this);
     }
