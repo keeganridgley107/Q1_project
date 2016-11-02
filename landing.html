@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/phaser.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="app.js" charset="utf-8"></script>
     <script src="js/materialize.min.js" charset="utf-8" defer></script>
     <link rel="stylesheet" href="css/materialize.min.css" media="screen">
@@ -14,24 +15,62 @@
     <link href="https://fonts.googleapis.com/css?family=Unica+One|Expletus+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Landing Page</title>
+    <title>Search Page</title>
+
 </head>
 
 <body>
+  <div class="navbar-fixed">
+  <nav class="row center grey darken-2">
+    <div class="row center">
 
+      <div class="col s3 m3 l3">
+        <button type="button" name="button" id="link1_button" class="btn grey waves-effect"><a href="landing.html">Refresh</a></button>
+      </div>
 
-    <div class="">
+      <div class="col s3 m3 l3 right">
+        <button type="button" name="button" id="link4_button" class="btn grey waves-effect"><a href="index.html">Home</a></button>
 
-        <div id="canvasDiv" class="">
+      </div>
+      <div class="col l3 m3 s3 right">
+        <button type="button" name="button" id="link3_button" class="btn grey waves-effect"><a href="sources.html">Sources</a></button>
+      </div>
+    </div>
+  </nav>
+</div>
 
-            <h5 id="landingImageText"><span id="landingImageSpan">SourceSearch is the quickest way to find official documents from the most reputable sources on the net</span></h5>
+    <header>
+        <div class="image valign-wrapper" id="imageBannerDiv">
+            <h1 class="center-align valign" id="image_button"><span id="titleSpan">SourceSearch</span></h1>
+        </div>
+    </header>
 
-            <span id="searchLinkSpan"><h6><a href="index.html"><i id="icon1" class="material-icons hoverable">search</i></a></h6></span>
+    <div class="container">
+        <div id="searchBoxDiv" class="col s12 m6 l5">
+            <gcse:searchbox></gcse:searchbox>
+        </div>
+        <div class="row center">
+            <div class=" col s12 m12 l12">
+
+            </div>
+        </div>
+        <div class="container" id="resultBoxDiv">
+            <gcse:searchresults></gcse:searchresults>
+        </div>
+    </div>
+    <footer >
+      <nav class="row center grey darken-2">
+        <div class="row center grey">
+          <div class="col l4 m4 s4 grey darken-3">
+
+              <h6 class="valign">SourceSearch</h6>
+              <h6 class="valign">&copy 2016</h6>
+
+          </div>
 
         </div>
-
-
-    </div>
+      </nav>
+    </footer>
 </body>
 
 </html>
