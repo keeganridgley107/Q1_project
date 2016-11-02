@@ -3,6 +3,7 @@ $(document).ready(function() {
     //function for google custom search is from google api docs
     //jquery / api is having trouble loading??
     //UPDATE: fixed conflict
+    console.log("ready! wireframe is @ https://wireframe.cc/9HBged");
 
     (function() {
         var cx = '010106870863249008865:hfaciltwsa8';
@@ -21,18 +22,34 @@ $(document).ready(function() {
 var dataARR = [];
     var url = "https://g-aylien.herokuapp.com/api/v1/histograms?field=social_shares_count&interval.width=100&interval.start=1&interval.end=3000&text=security&published_at.start=NOW-30DAYS&published_at.end=NOW&language=en&sort_by=social_shares_count";
 
-    $.getJSON(url, function(response) {
-      for (var keys in response.intervals) {
-        dataARR.push( response.intervals[keys].count)
-}
-        console.log(dataARR);
+//       $.getJSON(url, function(response) {
+//
+//       for (var keys in response.intervals) {
+//         dataARR.push( response.intervals[keys].count)
+//         }
+//        console.log(dataARR);
+//     });
+
+var $xhr = $.getJSON(url);
+
+    $xhr.done(function(data) {
+        if ($xhr.status !== 200) {
+            return;
+        }
+
+        console.log(data);
+        for (var keys in data.intervals) {
+         dataARR.push( data.intervals[keys].count)
+       }
+       console.log(dataARR);
     });
 
 
+    $xhr.fail(function(err) {
+        console.log(err);
+    });
 
 
-
-    console.log("ready! wireframe is @ https://wireframe.cc/9HBged");
 
 
     var counter = Math.floor((Math.random() * 15) + 1);
