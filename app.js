@@ -29,19 +29,30 @@ $(document).ready(function() {
 
 
     var searchTerm = "";
-//Sterm will be used to store text input and dynamicly load the chart
 
-
-
-
+    //Sterm will be used to store text input and dynamicly load the chart
     //HIGHCHARTS CODE WILL GO BELOW (above?) THIS LINE
     // this code will dynamicly create a chart based on the dataARR array
 
 
-function createHC(){
+function createHC(e){
 
-  var url = "https://g-aylien.herokuapp.com/api/v1/histograms?field=social_shares_count&interval.width=100&interval.start=1&interval.end=3000&text=dogs&published_at.start=NOW-30DAYS&published_at.end=NOW&language=en&sort_by=social_shares_count";
+e.preventDefault();
+
+var searchTerm = $('#analysisSearch').val();
+console.log(searchTerm);
+if (searchTerm.length >= 3) {
+
+}else{
+  return;
+}
+
+  var url = "https://g-aylien.herokuapp.com/api/v1/histograms?field=social_shares_count&interval.width=100&interval.start=1&interval.end=3000&text=" + searchTerm + "&published_at.start=NOW-30DAYS&published_at.end=NOW&language=en&sort_by=social_shares_count";
+
+  $('#analysisSearch').val("");
+  searchTerm = $('#analysisSearch').val();
   var dataARR = [];
+
   var $xhr = $.getJSON(url);
 
   $xhr.done(function(data) {
@@ -90,8 +101,11 @@ function createHC(){
     console.log(err);
   });
 
+
+
 }
-$('#seachHCButton').on('click',createHC);
+// end of createHC function
+$('#analysisSearchButton').on('click',createHC);
 
 
 
