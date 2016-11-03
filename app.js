@@ -40,7 +40,7 @@ function createHC(e){
 e.preventDefault();
 
 var searchTerm = $('#analysisSearch').val();
-console.log(searchTerm);
+//console.log(searchTerm);
 if (searchTerm.length >= 3) {
 
 }else{
@@ -49,8 +49,7 @@ if (searchTerm.length >= 3) {
 
   var url = "https://g-aylien.herokuapp.com/api/v1/histograms?field=social_shares_count&interval.width=100&interval.start=1&interval.end=3000&text=" + searchTerm + "&published_at.start=NOW-30DAYS&published_at.end=NOW&language=en&sort_by=social_shares_count";
 
-  $('#analysisSearch').val("");
-  searchTerm = $('#analysisSearch').val();
+
   var dataARR = [];
 
   var $xhr = $.getJSON(url);
@@ -61,10 +60,20 @@ if (searchTerm.length >= 3) {
       return;
     }
 
+    for (var keys in data.intervals) {
+
+        dataARR.push(data.intervals[keys].count);
+
+      //console.log(data);
+    }
+console.log(dataARR);
+var dataNewARR = dataARR.slice(3, 14);
+console.log(dataNewARR);
+
     var options = {
       chart: {
         renderTo: 'container',
-        type: 'line'
+        type: 'spline'
       },
       title: {
         text: 'Search Analysis'
@@ -81,16 +90,15 @@ if (searchTerm.length >= 3) {
         }
       },
       series: [{
-        name: 'Seach Query'
+        name: searchTerm
       }]
     };
 
-    for (var keys in data.intervals) {
-      dataARR.push(data.intervals[keys].count)
-    }
+    $('#analysisSearch').val("");
+    searchTerm = $('#analysisSearch').val();
 
-    options.series[0].data = dataARR;
-    console.log(dataARR);
+    options.series[0].data = dataNewARR;
+    //console.log(dataARR);
     var chart = new Highcharts.Chart(options)
 
     //console.log(chart);
