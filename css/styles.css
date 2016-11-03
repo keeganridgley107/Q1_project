@@ -113,3 +113,16 @@ button{
     animation: fade-in 2s ease;
     visibility: visible;
 }
+#rssPaddingBox{
+  height: 100px;
+  padding-left: 33.3%;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+#rssPaddingBox2{
+  height: 100px;
+  padding-left: 33.3%;
+  overflow: hidden;
+  padding-top: 100px;
+}
