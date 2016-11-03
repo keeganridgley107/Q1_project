@@ -2,107 +2,109 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-  <script src="https://apis.google.com/js/api.js"></script>
-  <script src="app.js" charset="utf-8"></script>
-  <script src="js/materialize.min.js" charset="utf-8" defer></script>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="js/materialize.min.js" charset="utf-8" defer></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
 
-  <link rel="stylesheet" href="css/materialize.min.css" media="screen">
-  <link rel="stylesheet" href="css/styles.css" media="screen">
-  <link href="https://fonts.googleapis.com/css?family=Unica+One|Expletus+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css" media="screen">
+    <link rel="stylesheet" href="css/styles.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Unica+One|Expletus+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Sources Page</title>
 
 </head>
 
 
-  <body>
+<body>
     <div class="navbar-fixed">
-    <nav class="row center grey darken-2">
-      <div class="row center">
-
-        <div class="col s3 m3 l3">
-          <button type="button" name="button" id="link1_button" class="btn grey waves-effect"><a href="sources.html">Refresh</a></button>
-        </div>
-
-        <div class="col s3 m3 l3 right">
-          <button type="button" name="button" id="link4_button" class="btn grey waves-effect"><a href="index.html">Home</a></button>
-
-        </div>
-        <div class="col l3 m3 s3 right">
-          <button type="button" name="button" id="link3_button" class="btn grey waves-effect"><a href="landing.html">Search</a></button>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-
-      <header>
-
-          <div class="valign-wrapper" >
-            <div id="container" style="width:100%; height:400px;">
-              <h1 class="center-align valign" id="h1Span" ><span id="titleSpan">SocialSearch</span></h1>
-            </div>
-          </div>
-      </header>
-<div class="row">
-  <div class="col l12 m12 s12 valign-wrapper" id="spacerDiv">
-    <div class="col l4 m4 s4"></div>
-    <div class="col l4 m4 s4">
-      <div class="col s12">
-
-        <div class="input-field">
-          <input id="analysisSearch" type="text" >
-
-          <label for="analysisSearch">Search</label>
-
-        </div>
-
-    </div>
-    </div>
-    <div class="col l4 m4 s4">
-
-      <span id="analysisSearchLinkSpan"><h6><i id="analysisSearchButton" class="medium material-icons hoverable">search</i></h6></span>
-
-    </div>
-  </div>
-</div>
-<div class="col l2 m2 s2 grey">
-  <h3 id="inverted" class="hoverable btn"></h3>
-</div>
-<div class="row valign-wrapper" id="rssPaddingBox2">
-  <div id="rssincl-box-container-1105982"></div>
-<script type="text/javascript">
-(function() {
-var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-s.src = 'http://output29.rssinclude.com/output?type=asyncjs&id=1105982&hash=16b630c0badbe1843677bd0f73e3a38f';
-document.getElementsByTagName('head')[0].appendChild(s);
-})();
-</script>
-</div>
-
-
-      <footer >
         <nav class="row center grey darken-2">
-          <div class="row center grey">
-            <div class="col l4 m4 s4 grey darken-3">
+            <div class="row center">
 
-                <h6 class="valign">SourceSearch</h6>
-                <h6 class="valign">&copy 2016</h6>
+                <div class="col s3 m3 l3">
+                    <button type="button" name="button" id="link1_button" class="btn grey waves-effect"><a href="sources.html">Refresh</a></button>
+                </div>
+
+                <div class="col s3 m3 l3 right">
+                    <button type="button" name="button" id="link4_button" class="btn grey waves-effect"><a href="index.html">Home</a></button>
+
+                </div>
+                <div class="col l3 m3 s3 right">
+                    <button type="button" name="button" id="link3_button" class="btn grey waves-effect"><a href="landing.html">Search</a></button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <header>
+
+        <div class="valign-wrapper">
+            <div id="container" style="width:100%; height:400px;">
+                <h1 class="center-align valign" id="h1Span"><span id="titleSpan">SocialSearch</span></h1>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        <div class="col l12 m12 s12 valign-wrapper" id="spacerDiv">
+            <div class="col l4 m4 s4"></div>
+            <div class="col l4 m4 s4">
+                <div class="col s12">
+
+                    <div class="input-field">
+                        <input id="analysisSearch" type="text">
+
+                        <label for="analysisSearch">Search</label>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col l4 m4 s4">
+
+                <span id="analysisSearchLinkSpan"><h6><i id="analysisSearchButton" class="medium material-icons hoverable">search</i></h6></span>
 
             </div>
+        </div>
+    </div>
+    <div class="col l2 m2 s2 grey">
+        <h3 id="inverted" class="hoverable grey btn"></h3>
+    </div>
+    <div class="row valign-wrapper" id="rssPaddingBox2">
+        <div id="rssincl-box-container-1105982"></div>
+        <script type="text/javascript">
+            (function() {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'http://output29.rssinclude.com/output?type=asyncjs&id=1105982&hash=16b630c0badbe1843677bd0f73e3a38f';
+                document.getElementsByTagName('head')[0].appendChild(s);
+            })();
+        </script>
+    </div>
 
-          </div>
+
+    <footer>
+        <nav class="row center grey darken-2">
+            <div class="row center grey">
+                <div class="col l4 m4 s4 grey darken-3">
+
+                    <h6 class="valign">SourceSearch</h6>
+                    <h6 class="valign">&copy 2016</h6>
+
+                </div>
+
+            </div>
         </nav>
-      </footer>
+    </footer>
 
 
-<!-- <script type="text/javascript">
+    <!-- <script type="text/javascript">
 var chart1; // globally available
   $(function () {
     Highcharts.chart('container', {
@@ -142,7 +144,7 @@ var chart1; // globally available
 </script> -->
 
 
-<!-- search / source analysis code goes here-->
+    <!-- search / source analysis code goes here-->
 
 
 </body>
